@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html ,body{
+    width: 100%;
+    height: 100%;
+    background-color: #9ab2c4;
+    padding: 10px;
+}
+div{
+    display: grid;
+    text-align: center;
+}
+
+#maket {
+    width: 100%
+
+}
+TD {
+    vertical-align: top; / Вертикальное выравнивание в ячейках /
+    padding: 5px; / Поля вокруг ячеек /
+   }
+TD#col {
+    width: 50%; / Ширина левой колонки /
+   }
