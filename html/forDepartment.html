@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/fontawesome.min.css">
+    <script src="js/menu.js"></script>
 </head>
 <body>
-<header></header>
+<header>
+    <div class="header">
+        <div class="sp"> </div>
+        <div class="menu"></div>
+        <div class="title">Title</div>
+        <div class="win-btn btn-min">
+            <i class="fa fa-window-minimize"></i>
+        </div>
+        <div class="win-btn btn-max">
+            <i class="fa fa-window-maximize"></i>
+        </div>
+        <div class="win-btn btn-close">
+            <i class="fa fa-window-close"></i>
+        </div>
+        <div class="sp"> </div>
+    </div>
+</header>
 <table class="app">
     <div class="first">
         <a>Выбереите институт</a>
@@ -16,9 +34,8 @@
         <a>Выбереите тип практики</a>
         <input class="practiceName">
     </div>
-    <table class="second" id="maket" style="" >
-        <tr>
-            <td id="col">
+    <div class="second" id="container">
+        <nav>
                 <div>
                     <a>Выберите дату приказа</a>
                     <input type="date" class="orderDate"></select>
@@ -27,10 +44,8 @@
                     <a>Введите должность на практике</a>
                     <input class="position">
                 </div>
-
-            </td>
-            <td style="padding: 50px;"></td>
-            <td id="col">
+        </nav>
+        <aside>
                 <div>
                     <a>Введите номер приказа</a>
                     <input class="orderName"></select>
@@ -39,32 +54,30 @@
                     <a>Введите данные зав. Кафедрой (Фамилия И.О)</a>
                     <input class="headOfDFN">
                 </div>
-
-        </td>
-        </tr>
-    </table>
+        </aside>
+    </div>
     <div class="third">
         <a>Введите место и время практики</a>
         <input class="practicePlaceAndTime">
     </div>
-    <table class="fourth" id="maket" >
+    <table class="fourth" id="maket">
         <tr>
-        <td id="col">
+        <td>
             <div>
                 <a>Выберите номер курса</a>
                 <select class="courseNum">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                    <option>6</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
 
                 </select>
             </div>
         </td>
             <td style="padding: 50px;"></td>
-        <td id="col">
+        <td>
             <div>
                 <a>Введите номер группы</a>
                 <input class="groupName">
@@ -72,16 +85,22 @@
         </td>
         </tr>
     </table>
-
-</table>
-<footer>
     <div class="fifth">
         <a>Введите название название направления</a>
         <input class="directionName">
         <a>Введите название профиля</a>
         <input class="profileName">
     </div>
-</footer>
+
+    <div>
+        <button class="fileChooser">Выбрать файл</button>
+        <a type="separator"></a>
+        <button class="submitBTN">Подтвердить</button>
+    </div>
+</table>
+
+
+
 </body>
 
 </html>

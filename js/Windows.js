@@ -9,8 +9,7 @@ const template =[
             {
                 label: "For Company",
                 click: async()=>{
-
-                    createWindowForDepartment()
+                    createWindowForCompany()
                 },
 
             },
