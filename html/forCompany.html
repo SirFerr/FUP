@@ -11,13 +11,20 @@
         <a class="nav-link" href="../html/forDepartment.html">For Department</a>
         <a class="nav-link" href="../html/forCompany.html">For Company</a>
     </div>
-</div>
 
 </div>
 <table class="app bg-light">
-    <div class="first text-center">
+
+    <div class="first container-fluid  text-center">
         <h6>Выбереите институт</h6>
-        <select class="form-select instituteName"></select>
+        <select class="form-select instituteName">
+            <option value="Институт информационных технологий">Институт информационных технологий</option>
+            <option value="Институт искусственного технологий">Институт искусственного технологий</option>
+            <option value="Институт кибербезопасности и цифровых технологий">Институт кибербезопасности и цифровых технологий</option>
+            <option value="Институт перспективных технологий и индустриального программирования">Институт перспективных технологий и индустриального программирования</option>
+            <option value="Институт технологий управления">Институт технологий управления</option>
+            <option value="Институт тонких химических технологий им. М.В. Ломоносова">Институт тонких химических технологий им. М.В. Ломоносова</option>
+        </select>
         <h6>Выбереите кафедру</h6>
         <input class="form-control departmentName">
         <h6>Выбереите тип практики</h6>
@@ -45,7 +52,7 @@
             </div>
         </div>
     </div>
-    <div class="third text-center">
+    <div class="third container-fluid text-center">
         <h6>Введите место и время практики</h6>
         <input class="form-control practicePlaceAndTime">
     </div>
@@ -69,16 +76,26 @@
         </div>
 
     </div>
-    <div class="fifth text-center">
+    <div class="fifth container-fluid text-center">
         <h6>Введите название название направления</h6>
         <input class="form-control directionName">
         <h6>Введите название профиля</h6>
         <input class="form-control profileName">
     </div>
 
-    <div class="text-center">
+    <div class="sixth container-fluid text-center">
         <button class="btn fileChooser">Выбрать файл</button>
-        <button class="btn submitBTN ">Подтвердить</button>
+        <div class="btn-group dropup">
+            <button type="button" class="btn dropdown-toggle submitBTN"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Подтвердить</button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item submitBTNPdf" href="#">Cохранить как .pdf</a>
+                <a class="dropdown-item submitBTNDoc" href="#">Cохранить как .doc</a>
+            </div>
+
+        </div>
+
+    </div>
     </div>
 </table>
 
