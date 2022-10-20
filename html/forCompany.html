@@ -17,50 +17,84 @@
 
     <div class="first container-fluid  text-center">
         <h6>Выбереите институт</h6>
-        <select class="form-select instituteName">
+        <!--        <div class="input-group mb-auto">-->
+        <!--            <input type="text" class="form-control" aria-label="Text input with dropdown button">-->
+        <!--            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>-->
+        <!--            <ul class="dropdown-menu">-->
+        <!--                <li><a class="dropdown-item" href="#">Институт информационных технологий</a></li>-->
+        <!--                <li><a class="dropdown-item" href="#">Институт искусственного интеллекта</a></li>-->
+        <!--                <li><a class="dropdown-item" href="#">Институт кибербезопасности и цифровых технологий</a></li>-->
+        <!--                <li><a class="dropdown-item" href="#">Институт перспективных технологий и индустриального программирования</a></li>-->
+        <!--                <li><a class="dropdown-item" href="#">Институт технологий управления</a></li>-->
+        <!--                <li><a class="dropdown-item" href="#">Институт тонких химических технологий им. М.В. Ломоносова</a></li>-->
+        <!--            </ul>-->
+        <!--        </div>-->
+        <select class="form-select" name="instituteName">
             <option value="Институт информационных технологий">Институт информационных технологий</option>
-            <option value="Институт искусственного технологий">Институт искусственного технологий</option>
+            <option value="Институт искусственного интеллекта">Институт искусственного интеллекта</option>
             <option value="Институт кибербезопасности и цифровых технологий">Институт кибербезопасности и цифровых технологий</option>
             <option value="Институт перспективных технологий и индустриального программирования">Институт перспективных технологий и индустриального программирования</option>
             <option value="Институт технологий управления">Институт технологий управления</option>
             <option value="Институт тонких химических технологий им. М.В. Ломоносова">Институт тонких химических технологий им. М.В. Ломоносова</option>
         </select>
         <h6>Выбереите кафедру</h6>
-        <input class="form-control departmentName">
+        <input class="form-control" name="departmentName">
         <h6>Выбереите тип практики</h6>
-        <input class="form-control practiceName">
+        <input class="form-control" name="practiceName">
     </div>
     <div class="second container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите дату приказа</h6>
-                <input type="date" class="form-control orderDate"></select>
-                <h6>Выберите дату получения задания</h6>
-                <input type="date" class="form-control currentDate">
-                <h6>Введите должность на практике</h6>
-                <input class="form-control position">
+                <input type="date" class="form-control " name="orderDate"></select>
+
+
             </div>
             <div class="col">
                 <h6>Введите номер приказа</h6>
-                <input class="form-control orderName"></select>
+                <input class="form-control " name="orderName"></select>
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h6>Выберите дату получения задания</h6>
+                <input type="date" class="form-control " name="currentDate">
+            </div>
+            <div class="col">
                 <h6>Введите данные руководителя (Фамилия И.О)</h6>
-                <input class="form-control supervisorFN">
+                <input class="form-control " name="supervisorFN">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h6>Введите должность на практике</h6>
+                <input class="form-control position" name="position">
+            </div>
+            <div class="col">
                 <h6>Введите данные зав. Кафедрой (Фамилия И.О)</h6>
-                <input class="form-control headOfDFN">
+                <input class="form-control " name="headOfDFN">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col">
                                 <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
-                                <input class="form-control supervisorCompanyFN">
+                                <input class="form-control " name="supervisorCompanyFN">
             </div>
         </div>
     </div>
     <div class="third container-fluid text-center">
         <h6>Введите место и время практики</h6>
-        <input class="form-control practicePlaceAndTime">
+        <input class="form-control " name="practicePlaceAndTime">
     </div>
     <div class="fourth container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите номер курса</h6>
-                <select class="form-select courseNum">
+                <select class="form-select courseNum" name="courseNum">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -71,26 +105,31 @@
             </div>
             <div class="col">
                 <h6>Введите номер группы</h6>
-                <input class="form-control groupName">
+                <input class="form-control "name="groupName">
             </div>
         </div>
 
     </div>
     <div class="fifth container-fluid text-center">
         <h6>Введите название название направления</h6>
-        <input class="form-control directionName">
+        <input class="form-control" name="directionName">
         <h6>Введите название профиля</h6>
-        <input class="form-control profileName">
+        <input class="form-control" name="profileName">
     </div>
 
-    <div class="sixth container-fluid text-center">
-        <button class="btn fileChooser">Выбрать файл</button>
+    <div class="sixth text-center container-fluid">
+        <form>
+            <div class="form-group">
+                <label for="exampleFormControlFile1">Выбрать файл</label>
+                <input type="file" class="form-control-file " name="fileChooser" id="exampleFormControlFile1">
+            </div>
+        </form>
         <div class="btn-group dropup">
-            <button type="button" class="btn dropdown-toggle submitBTN"
+            <button type="button" class="btn btn-primary dropdown-toggle submitBTN"
                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Подтвердить</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item submitBTNPdf" href="#">Cохранить как .pdf</a>
-                <a class="dropdown-item submitBTNDoc" href="#">Cохранить как .doc</a>
+                <a class="dropdown-item submitBTNPdf" >Cохранить как .pdf</a>
+                <a class="dropdown-item submitBTNDoc">Cохранить как .doc</a>
             </div>
 
         </div>
@@ -98,9 +137,8 @@
     </div>
     </div>
 </table>
-
-
-<script src="./js/menu.js"></script>
+<script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
+<script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/menu.js"></script>
 </body>
-
 </html>

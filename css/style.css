@@ -1,18 +1,10 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html ,body{
-    width: 100%;
-    height: 100%;
-}
 h6{
-    font-size: small;
+    padding-top: 10px;
+    height: 50%
 }
-body{
-    display: grid;
-    --bs-list-group-color: #9ab2c4;
-    color: #151818;
-    text-align: center;
+div.sixth{
+    padding-top: 10px;
+}
+button.btn{
+    margin-top: 10px;
 }
