@@ -2,11 +2,11 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+       <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="navbar navbar-expand-lg bg-secondary text-light">
+    <div class="navbar bg-secondary text-light">
         <div class="container">
             <a class="nav-link" href="../html/forDepartment.html">For Department</a>
             <a class="nav-link" href="../html/forCompany.html">For Company</a>
@@ -116,29 +116,30 @@
         <h6>Введите название профиля</h6>
         <input class="form-control" name="profileName">
     </div>
-
-    <div class="sixth text-center container-fluid">
+    <div class="container-fluid text-center ">
         <form>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Выбрать файл</label>
-                <input type="file" class="form-control-file " name="fileChooser" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" name="fileChooser" id="exampleFormControlFile1">
             </div>
         </form>
-        <div class="btn-group dropup">
-            <button type="button" class="btn btn-primary dropdown-toggle submitBTN"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Подтвердить</button>
+    </div>
+    <div class="sixth container-fluid text-center ">
+
+        <div class="dropdown dropup">
+            <button type="button" class="btn btn-primary dropdown-toggle submitBTN" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Подтвердить
+            </button>
             <div class="dropdown-menu">
-               <a class="dropdown-item submitBTNPdf" >Cохранить как .pdf</a>
+               <a class="dropdown-item submitBTNPdf">Cохранить как .pdf</a>
                 <a class="dropdown-item submitBTNDoc">Cохранить как .doc</a>
             </div>
-
         </div>
 
     </div>
     </div>
 </table>
-    <script src="../node_modules/jquery/dist/jquery.slim.min.js"></script>
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/menu.js"></script>
+    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
