@@ -131,14 +131,16 @@
                 Подтвердить
             </button>
             <div class="dropdown-menu">
-               <a class="dropdown-item submitBTNPdf">Cохранить как .pdf</a>
-                <a class="dropdown-item submitBTNDoc">Cохранить как .doc</a>
+                <a class="dropdown-item " id="submitBTNPdf" onclick="pdfCreate()">Cохранить как .pdf</a>
+                <a class="dropdown-item " id="submitBTNDoc" onclick="docCreate()">Cохранить как .doc</a>
+                <input id="clickMe" type="button" value="clickme" onclick="doFunction();" />
             </div>
         </div>
 
     </div>
     </div>
 </table>
+    <script src="../js/submit.js"></script>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>
