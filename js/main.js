@@ -43,6 +43,7 @@ app.on('activate',()=>{
         createWindowForDepartment()
     }
 })
+
 // const submitBTNPdf = document.getElementById('submitBTNPdf')[0]
 // submitBTNPdf._addEventListeners('click',function (){
 //     createSubmitWindow()

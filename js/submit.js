@@ -1,14 +1,6 @@
-import "./main.js";
-
-createSubmitWindow()
-
-function doFunction(){
-    console.log('doFunction')
+function createForDepartment(ver){
+    console.log(ver+"createForDepartment")
 }
-function docCreate(){
-    console.log("docCreate")
-}
-function pdfCreate(){
-    console.log("pdfCreate")
-    createSubmitWindow()
+function createForCompany(ver){
+    console.log(ver+"createForCompany")
 }
