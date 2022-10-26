@@ -14,22 +14,9 @@
 
 </div>
 <table class="app bg-light">
-
     <div class="first container-fluid  text-center">
         <h6>Выбереите институт</h6>
-        <!--        <div class="input-group mb-auto">-->
-        <!--            <input type="text" class="form-control" aria-label="Text input with dropdown button">-->
-        <!--            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>-->
-        <!--            <ul class="dropdown-menu">-->
-        <!--                <li><a class="dropdown-item" href="#">Институт информационных технологий</a></li>-->
-        <!--                <li><a class="dropdown-item" href="#">Институт искусственного интеллекта</a></li>-->
-        <!--                <li><a class="dropdown-item" href="#">Институт кибербезопасности и цифровых технологий</a></li>-->
-        <!--                <li><a class="dropdown-item" href="#">Институт перспективных технологий и индустриального программирования</a></li>-->
-        <!--                <li><a class="dropdown-item" href="#">Институт технологий управления</a></li>-->
-        <!--                <li><a class="dropdown-item" href="#">Институт тонких химических технологий им. М.В. Ломоносова</a></li>-->
-        <!--            </ul>-->
-        <!--        </div>-->
-        <select class="form-select" name="instituteName">
+        <select class="form-select" name="instituteName" id="instituteName">
             <option value="Институт информационных технологий">Институт информационных технологий</option>
             <option value="Институт искусственного интеллекта">Институт искусственного интеллекта</option>
             <option value="Институт кибербезопасности и цифровых технологий">Институт кибербезопасности и цифровых технологий</option>
@@ -38,21 +25,21 @@
             <option value="Институт тонких химических технологий им. М.В. Ломоносова">Институт тонких химических технологий им. М.В. Ломоносова</option>
         </select>
         <h6>Выбереите кафедру</h6>
-        <input class="form-control" name="departmentName">
+        <input class="form-control" name="departmentName" id="departmentName">
         <h6>Выбереите тип практики</h6>
-        <input class="form-control" name="practiceName">
+        <input class="form-control" name="practiceName" id="practiceName">
     </div>
     <div class="second container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите дату приказа</h6>
-                <input type="date" class="form-control " name="orderDate"></select>
+                <input type="date" class="form-control " name="orderDate" id="orderDate">
 
 
             </div>
             <div class="col">
                 <h6>Введите номер приказа</h6>
-                <input class="form-control " name="orderName"></select>
+                <input class="form-control " name="orderName" id="orderName">
 
 
 
@@ -61,40 +48,40 @@
         <div class="row">
             <div class="col">
                 <h6>Выберите дату получения задания</h6>
-                <input type="date" class="form-control " name="currentDate">
+                <input type="date" class="form-control " name="currentDate" id="currentDate">
             </div>
             <div class="col">
                 <h6>Введите данные руководителя (Фамилия И.О)</h6>
-                <input class="form-control " name="supervisorFN">
+                <input class="form-control " name="supervisorFN" id="supervisorFN">
             </div>
         </div>
         <div class="row">
             <div class="col">
                 <h6>Введите должность на практике</h6>
-                <input class="form-control position" name="position">
+                <input class="form-control position" name="position" id="position">
             </div>
             <div class="col">
                 <h6>Введите данные зав. Кафедрой (Фамилия И.О)</h6>
-                <input class="form-control " name="headOfDFN">
+                <input class="form-control " name="headOfDFN" id="headOfDFN">
             </div>
         </div>
         <div class="row">
             <div class="col"></div>
             <div class="col">
-                                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
-                                <input class="form-control " name="supervisorCompanyFN">
+                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
+                <input class="form-control " name="supervisorCompanyFN" id="supervisorCompanyFN">
             </div>
         </div>
     </div>
     <div class="third container-fluid text-center">
         <h6>Введите место и время практики</h6>
-        <input class="form-control " name="practicePlaceAndTime">
+        <input class="form-control " name="practicePlaceAndTime" id="practicePlaceAndTime">
     </div>
     <div class="fourth container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите номер курса</h6>
-                <select class="form-select courseNum" name="courseNum">
+                <select class="form-select courseNum" name="courseNum" id="courseNum">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -105,22 +92,22 @@
             </div>
             <div class="col">
                 <h6>Введите номер группы</h6>
-                <input class="form-control "name="groupName">
+                <input class="form-control "name="groupName" id="groupName">
             </div>
         </div>
 
     </div>
     <div class="fifth container-fluid text-center">
         <h6>Введите название название направления</h6>
-        <input class="form-control" name="directionName">
+        <input class="form-control" name="directionName" id="directionName">
         <h6>Введите название профиля</h6>
-        <input class="form-control" name="profileName">
+        <input class="form-control" name="profileName" id="profileName">
     </div>
     <div class="container-fluid text-center ">
         <form>
             <div class="form-group">
                 <label for="exampleFormControlFile1">Выбрать файл</label>
-                <input type="file" class="form-control-file" name="fileChooser" id="exampleFormControlFile1">
+                <input type="file" class="form-control-file" name="fileChooser" id="fileChooser" id="exampleFormControlFile1">
             </div>
         </form>
     </div>
@@ -130,12 +117,14 @@
                 Подтвердить
             </button>
             <div class="dropdown-menu">
+<!--                <a class="dropdown-item " id="submitBTNPdf" onclick="createForDepartment(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>-->
+<!--                <a class="dropdown-item " id="submitBTNDoc" onclick="createForDepartment(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>-->
                 <a class="dropdown-item " id="submitBTNPdf" onclick="createForCompany(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
                 <a class="dropdown-item " id="submitBTNDoc" onclick="createForCompany(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="submitWindow" aria-bs-labelledby="submitWindowLabel" tabindex="-1" aria-bs-hidden="true">
+    <div class="modal fade" id="submitWindow" tabindex="-1" aria-bs-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

@@ -1,7 +1,9 @@
 const {path}=require('path');
 const {url}=require('url');
 const {app, BrowserWindow} = require("electron")
- function createWindowForDepartment() {
+
+
+function createWindowForDepartment() {
     const forDepartment = new BrowserWindow({
         width: 600,
         height: 800,
