@@ -1,7 +1,7 @@
-const {path}=require('path');
-const {url}=require('url');
 const {app, BrowserWindow} = require("electron")
 
+// const { fork } = require('child_process')
+// const ps = fork(`${__dirname}/server.js`)
 
 function createWindowForDepartment() {
     const forDepartment = new BrowserWindow({
@@ -12,9 +12,9 @@ function createWindowForDepartment() {
         webPreferences: {
             nodeIntegration: true,
             enableRemoteModules: true
-        }
-    });
+        },
 
+    });
 
     forDepartment.loadFile('html/forDepartment.html')
 
@@ -45,9 +45,3 @@ app.on('activate',()=>{
         createWindowForDepartment()
     }
 })
-
-// const submitBTNPdf = document.getElementById('submitBTNPdf')[0]
-// submitBTNPdf._addEventListeners('click',function (){
-//     createSubmitWindow()
-// })
-
