@@ -16,26 +16,15 @@
 <table class="app bg-light">
     <div class="first container-fluid  text-center">
                 <h6>Выбереите институт</h6>
-<!--        <div class="input-group">-->
-<!--            <input type="text" class="form-control" aria-label="Text input with dropdown button">-->
-<!--            <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false"></button>-->
-<!--            <ul class="dropdown-menu">-->
-<!--                <li><a class="dropdown-item" href="#">Институт информационных технологий</a></li>-->
-<!--                <li><a class="dropdown-item" href="#">Институт искусственного интеллекта</a></li>-->
-<!--                <li><a class="dropdown-item" href="#">Институт кибербезопасности и цифровых технологий</a></li>-->
-<!--                <li><a class="dropdown-item" href="#">Институт перспективных технологий и индустриального программирования</a></li>-->
-<!--                <li><a class="dropdown-item" href="#">Институт технологий управления</a></li>-->
-<!--                <li><a class="dropdown-item" href="#">Институт тонких химических технологий им. М.В. Ломоносова</a></li>-->
-<!--            </ul>-->
-<!--        </div>-->
-                <select class="form-select" name="instituteName" id="instituteName">
-                    <option value="Институт информационных технологий">Институт информационных технологий</option>
-                    <option value="Институт искусственного интеллекта">Институт искусственного интеллекта</option>
-                    <option value="Институт кибербезопасности и цифровых технологий">Институт кибербезопасности и цифровых технологий</option>
-                    <option value="Институт перспективных технологий и индустриального программирования">Институт перспективных технологий и индустриального программирования</option>
-                    <option value="Институт технологий управления">Институт технологий управления</option>
-                    <option value="Институт тонких химических технологий им. М.В. Ломоносова">Институт тонких химических технологий им. М.В. Ломоносова</option>
-                </select>
+        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+        <datalist id="datalistOptions">
+            <option value="Институт информационных технологий"></option>
+            <option value="Институт искусственного интеллекта"></option>
+            <option value="Институт кибербезопасности и цифровых технологий"></option>
+            <option value="Институт перспективных технологий и индустриального программирования"></option>
+            <option value="Институт технологий управления"></option>
+            <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
+        </datalist>
                 <h6>Выбереите кафедру</h6>
                 <input class="form-control" name="departmentName" id="departmentName">
                 <h6>Выбереите тип практики</h6>

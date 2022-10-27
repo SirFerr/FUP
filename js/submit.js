@@ -2,7 +2,7 @@ async function createForDepartment(ver) {
     console.log(ver + "\n" + "createForDepartment")
     const toSave = {
         ver: ver,
-        instituteName: document.getElementById('instituteName').value,
+        instituteName: document.getElementById('exampleDataList').value,
         departmentName: document.getElementById('departmentName').value,
         practiceName: document.getElementById('practiceName').value,
         orderDate: document.getElementById('orderDate').value,
@@ -26,7 +26,7 @@ async function createForCompany(ver) {
     console.log(ver + "createForCompany")
     const toSave = {
         ver: ver,
-        instituteName: document.getElementById('instituteName').value,
+        instituteName: document.getElementById('exampleDataList').value,
         departmentName: document.getElementById('departmentName').value,
         practiceName: document.getElementById('practiceName').value,
         orderDate: document.getElementById('orderDate').value,
