@@ -1,5 +1,4 @@
 async function createForDepartment(ver) {
-    console.log(ver + "\n" + "createForDepartment")
     const toSave = {
         ver: ver,
         instituteName: document.getElementById('exampleDataList').value,
@@ -17,13 +16,11 @@ async function createForDepartment(ver) {
         groupName: document.getElementById('groupName').value,
         directionName: document.getElementById('directionName').value,
         profileName: document.getElementById('profileName').value,
-        fileChooser: document.getElementById('fileChooser').value
+        fileChooser: document.getElementById('customFile').value
     }
-    console.log(toSave)
     await sendToBack(toSave)
 }
 async function createForCompany(ver) {
-    console.log(ver + "createForCompany")
     const toSave = {
         ver: ver,
         instituteName: document.getElementById('exampleDataList').value,
@@ -41,13 +38,13 @@ async function createForCompany(ver) {
         groupName: document.getElementById('groupName').value,
         directionName: document.getElementById('directionName').value,
         profileName: document.getElementById('profileName').value,
-        fileChooser: document.getElementById('fileChooser').value
+        fileChooser: document.getElementById('customFile').value
     }
-    console.log(toSave)
     await sendToBack(toSave)
 }
 
 async function sendToBack(toSave) {
+    console.log("Процесс начат")
     const url = "http://localhost:8080/"
     try {
         const response = await fetch(url, {
@@ -58,6 +55,7 @@ async function sendToBack(toSave) {
             },
             body: JSON.stringify(toSave)
         });
+        console.log("Процесс закончен")
     } catch (e) {
         console.error("error", e);
     }

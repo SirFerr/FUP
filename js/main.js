@@ -1,10 +1,10 @@
-const {app, BrowserWindow} = require("electron")
+const {app, BrowserWindow, globalShortcut} = require("electron")
+var kill  = require('tree-kill');
+const os = require('os')
 
-// const { fork } = require('child_process')
-// const ps = fork(`${__dirname}/server.js`)
-
-function createWindowForDepartment() {
-    const forDepartment = new BrowserWindow({
+var mainWindow = null
+app.on('ready', function () {
+    mainWindow  = new BrowserWindow({
         width: 600,
         height: 800,
         title: "FUP",
@@ -13,35 +13,38 @@ function createWindowForDepartment() {
             nodeIntegration: true,
             enableRemoteModules: true
         },
-
     });
 
-    forDepartment.loadFile('html/forDepartment.html')
+    var jarPath = app.getAppPath() + '\\UniversityProjectBackend.jar';
+    var child = require('child_process').spawn(
+        'java', ['-jar', jarPath, '']
+    );
 
-    forDepartment.webContents.openDevTools();
-}
-function createSubmitWindow (){
-        const submit = new BrowserWindow({
-            width: 600,
-            height: 400,
-            title: "Submit window",
-            resizable: true,
-            webPreferences: {
-                nodeIntegration: true,
-                enableRemoteModules: true
-            }
+    let platform = os.platform()
+    mainWindow.loadFile('html/forDepartment.html')
+    if (platform === 'darwin') {
+        globalShortcut.register('Command+Option+I', () => {
+            mainWindow.webContents.openDevTools()
         })
-        submit.loadFile('html/submitWindow.html')
+    } else if (platform === 'linux' || platform === 'win32') {
+        globalShortcut.register('Control+Shift+I', () => {
+            mainWindow.webContents.openDevTools()
+        })
     }
-app.whenReady().then(createWindowForDepartment)
 
-app.on("window-all-closed", ()=>{
-    if(process.platform!="darwin"){
-        app.quit()
+    mainWindow.once('ready-to-show', () => {
+        mainWindow.setMenu(null)
+        mainWindow.show()
+    })
+
+    mainWindow.onbeforeunload = (e) => {
+        // Prevent Command-R from unloading the window contents.
+        e.returnValue = false
     }
+
+    mainWindow.on('closed', function () {
+        kill(child.pid);
+        mainWindow = null
+    })
 })
-app.on('activate',()=>{
-    if(BrowserWindow.getAllWindows() === 0){
-        createWindowForDepartment()
-    }
-})
+
