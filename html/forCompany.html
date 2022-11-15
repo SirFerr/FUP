@@ -8,7 +8,7 @@
 <body>
 <div class="navbar bg-secondary text-light">
     <div class="container">
-        <a class="nav-link" href="../html/forDepartment.html">Для РТУ МИРЭЕ</a>
+        <a class="nav-link" href="../html/forDepartment.html">Для РТУ МИРЭА</a>
         <a class="nav-link disabled" href="../html/forCompany.html">Для компаний</a>
     </div>
 
@@ -108,7 +108,7 @@
         <form>
             <div class="form-group">
                 <h6 for="customFile">Выбрать файл</h6>
-                <input type="file" class="form-control" id="customFile" />
+                <input type="file" class="form-control" id="formFile" />
             </div>
         </form>
     </div>
@@ -120,8 +120,8 @@
             <div class="dropdown-menu">
 <!--                <a class="dropdown-item " id="submitBTNPdf" onclick="createForDepartment(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>-->
 <!--                <a class="dropdown-item " id="submitBTNDoc" onclick="createForDepartment(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>-->
-                <a class="dropdown-item " id="submitBTNPdf" onclick="createForCompany(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
-                <a class="dropdown-item " id="submitBTNDoc" onclick="createForCompany(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
+                <a class="dropdown-item " id="submitBTNPdf" onclick="sendToBack(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
+                <a class="dropdown-item " id="submitBTNDoc" onclick="sendToBack(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
             </div>
         </div>
     </div>

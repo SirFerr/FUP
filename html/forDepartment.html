@@ -8,42 +8,44 @@
 <body>
     <div class="navbar bg-secondary text-light">
         <div class="container">
-            <a class="nav-link disabled" href="../html/forDepartment.html">Для РТУ МИРЭЕ</a>
+            <a class="nav-link disabled" href="../html/forDepartment.html">Для РТУ МИРЭА</a>
             <a class="nav-link" href="../html/forCompany.html">Для компаний</a>
         </div>
 
     </div>
 <table class="app bg-light">
+    <form class="was-validated">
     <div class="first container-fluid  text-center">
-                <h6>Выбереите институт</h6>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-        <datalist id="datalistOptions">
-            <option value="Институт информационных технологий"></option>
-            <option value="Институт искусственного интеллекта"></option>
-            <option value="Институт кибербезопасности и цифровых технологий"></option>
-            <option value="Институт перспективных технологий и индустриального программирования"></option>
-            <option value="Институт технологий управления"></option>
-            <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
-        </datalist>
-                <h6>Выбереите кафедру</h6>
-                <input class="form-control" name="departmentName" id="departmentName">
-                <h6>Выбереите тип практики</h6>
-                <input class="form-control" name="practiceName" id="practiceName">
+        <div>
+            <h6>Выбереите институт</h6>
+            <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
+            <datalist id="datalistOptions">
+                <option value="Институт информационных технологий"></option>
+                <option value="Институт искусственного интеллекта"></option>
+                <option value="Институт кибербезопасности и цифровых технологий"></option>
+                <option value="Институт перспективных технологий и индустриального программирования"></option>
+                <option value="Институт технологий управления"></option>
+                <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
+            </datalist>
+        </div>
+        <div>
+            <h6>Выбереите кафедру</h6>
+            <input class="form-control" name="departmentName" id="departmentName">
+        </div>
+        <div>
+            <h6>Выбереите тип практики</h6>
+            <input class="form-control" name="practiceName" id="practiceName">
+        </div>
     </div>
     <div class="second container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите дату приказа</h6>
                 <input type="date" class="form-control " name="orderDate" id="orderDate">
-
-
             </div>
             <div class="col">
                 <h6>Введите номер приказа</h6>
                 <input class="form-control " name="orderName" id="orderName">
-
-
-
             </div>
         </div>
         <div class="row">
@@ -96,19 +98,22 @@
         <input class="form-control "name="groupName" id="groupName">
     </div>
 </div>
-
     </div>
     <div class="fifth container-fluid text-center">
-        <h6>Введите название название направления</h6>
-        <input class="form-control" name="directionName" id="directionName">
-        <h6>Введите название профиля</h6>
-        <input class="form-control" name="profileName" id="profileName">
+        <div>
+            <h6>Введите название название направления</h6>
+            <input class="form-control" name="directionName" id="directionName">
+        </div>
+        <div>
+            <h6>Введите название профиля</h6>
+            <input class="form-control" name="profileName" id="profileName">
+        </div>
     </div>
     <div class="container-fluid text-center ">
         <form>
             <div class="form-group">
                 <h6 for="customFile">Выбрать файл</h6>
-                <input type="file" class="form-control" id="customFile" />
+                <input type="file" class="form-control" id="formFile" />
             </div>
         </form>
     </div>
@@ -118,10 +123,8 @@
                 Подтвердить
             </button>
             <div class="dropdown-menu">
-                <a class="dropdown-item " id="submitBTNPdf" onclick="createForDepartment(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
-                <a class="dropdown-item " id="submitBTNDoc" onclick="createForDepartment(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
-<!--                <a class="dropdown-item " id="submitBTNPdf" onclick="createForCompany(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>-->
-<!--                <a class="dropdown-item " id="submitBTNDoc" onclick="createForCompany(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>-->
+                <a class="dropdown-item " id="submitBTNPdf" onclick="sendToBack(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
+                <a class="dropdown-item " id="submitBTNDoc" onclick="sendToBack(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
             </div>
         </div>
     </div>
@@ -138,6 +141,7 @@
         </div>
     </div>
     </div>
+    </form>
 </table>
     <script src="../js/submit.js"></script>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>

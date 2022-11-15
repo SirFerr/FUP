@@ -1,4 +1,6 @@
-async function createForDepartment(ver) {
+async function sendToBack(ver) {
+    console.log("Процесс начат")
+    var forms = document.querySelectorAll('.needs-validation')
     const toSave = {
         ver: ver,
         instituteName: document.getElementById('exampleDataList').value,
@@ -10,40 +12,18 @@ async function createForDepartment(ver) {
         supervisorFN: document.getElementById('supervisorFN').value,
         position: document.getElementById('position').value,
         headOfDFN: document.getElementById('headOfDFN').value,
-        // supervisorCompanyFN: document.getElementById('supervisorCompanyFN').value,
+        supervisorCompanyFN: "",
         practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value,
         courseNum: document.getElementById('courseNum').value,
         groupName: document.getElementById('groupName').value,
         directionName: document.getElementById('directionName').value,
         profileName: document.getElementById('profileName').value,
-        fileChooser: document.getElementById('customFile').value
+        fileChooser: document.getElementById('formFile').value,
     }
-    await sendToBack(toSave)
-}
-async function createForCompany(ver) {
-    const toSave = {
-        ver: ver,
-        instituteName: document.getElementById('exampleDataList').value,
-        departmentName: document.getElementById('departmentName').value,
-        practiceName: document.getElementById('practiceName').value,
-        orderDate: document.getElementById('orderDate').value,
-        orderName: document.getElementById('orderName').value,
-        currentDate: document.getElementById('currentDate').value,
-        supervisorFN: document.getElementById('supervisorFN').value,
-        position: document.getElementById('position').value,
-        headOfDFN: document.getElementById('headOfDFN').value,
-        supervisorCompanyFN: document.getElementById('supervisorCompanyFN').value,
-        practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value,
-        courseNum: document.getElementById('courseNum').value,
-        groupName: document.getElementById('groupName').value,
-        directionName: document.getElementById('directionName').value,
-        profileName: document.getElementById('profileName').value,
-        fileChooser: document.getElementById('customFile').value
+    if (document.getElementById('supervisorCompanyFN')!=null){
+        toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
     }
-    await sendToBack(toSave)
-}
-
-async function sendToBack(toSave) {
+    console.log(toSave)
     console.log("Процесс начат")
     const url = "http://localhost:8080/"
     try {
