@@ -23,25 +23,24 @@ async function sendToBack(ver) {
     if (document.getElementById('supervisorCompanyFN')!=null){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
     }
-    if (!(
-        toSave.instituteName || toSave.departmentName ||
-        toSave.practiceName || toSave.orderDate ||
-        toSave.orderName || toSave.currentDate ||
-        toSave.supervisorFN || toSave.position ||
-        toSave.headOfDFN || toSave.supervisorCompanyFN ||
-        toSave.practicePlaceAndTime || toSave.courseNum ||
-        toSave.groupName || toSave.directionName ||
-        toSave.profileName || toSave.fileChooser
+    else toSave.supervisorCompanyFN="null"
+    if ((
+        !toSave.instituteName || !toSave.departmentName ||
+        !toSave.practiceName || !toSave.orderDate ||
+        !toSave.orderName || !toSave.currentDate ||
+        !toSave.supervisorFN || !toSave.position ||
+        !toSave.headOfDFN || !toSave.supervisorCompanyFN ||
+        !toSave.practicePlaceAndTime || !toSave.courseNum ||
+        !toSave.groupName || !toSave.directionName ||
+        !toSave.profileName || !toSave.fileChooser
     )) {
         $('#errWindow').modal("show");
     }
     else {
-
         $('#submitWindow').modal("show");
         console.log(toSave)
-        console.log("Процесс начат")
 
-        const url = "http://localhost:8080/"
+        const url = "http://localhost:8080/api/test"
         try {
             const response = await fetch(url, {
                 method: 'POST',
