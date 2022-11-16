@@ -14,36 +14,74 @@
 
 </div>
 <table class="app bg-light">
-    <div class="first container-fluid  text-center">
-        <h6>Выбереите институт</h6>
-        <input class="form-control" list="datalistOptions" id="exampleDataList" placeholder="Type to search...">
-        <datalist id="datalistOptions">
-            <option value="Институт информационных технологий"></option>
-            <option value="Институт искусственного интеллекта"></option>
-            <option value="Институт кибербезопасности и цифровых технологий"></option>
-            <option value="Институт перспективных технологий и индустриального программирования"></option>
-            <option value="Институт технологий управления"></option>
-            <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
-        </datalist>
-        <h6>Выбереите кафедру</h6>
-        <input class="form-control" name="departmentName" id="departmentName">
-        <h6>Выбереите тип практики</h6>
-        <input class="form-control" name="practiceName" id="practiceName">
+    <div class="modal fade" id="submitWindow" data-bs-keyboard="false" tabindex="-1" aria-bs-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" style="display: none;" id="submitWindowHeader">
+                    <button class="btn-close" data-bs-dismiss="modal" aria-bs-label="close" id="closeBtn"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center" id="submitWindowText">Процесс начат </h5>
+                    <div class="text-center" id="spinner">
+                        <div class="spinner-border" role="status"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="errWindow" data-bs-keyboard="false" tabindex="-1" aria-bs-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header" id="errWindowHeader">
+                    <button class="btn-close" data-bs-dismiss="modal" aria-bs-label="close"></button>
+                </div>
+                <div class="modal-body">
+                    <h5 class="text-center" id="errWindowText">Заполнены не все поля</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="first container-fluid text-center">
+        <div>
+            <h6>Выберите институт</h6>
+            <input class="form-control" list="instituteNameList" id="instituteName" placeholder="Type to search...">
+            <datalist id="instituteNameList">
+                <option value="Институт информационных технологий"></option>
+                <option value="Институт искусственного интеллекта"></option>
+                <option value="Институт кибербезопасности и цифровых технологий"></option>
+                <option value="Институт перспективных технологий и индустриального программирования"></option>
+                <option value="Институт технологий управления"></option>
+                <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
+                <option>
+            </datalist>
+        </div>
+        <div>
+            <h6>Выберите кафедру</h6>
+            <input class="form-control" name="departmentName" id="departmentName">
+        </div>
+        <div>
+            <h6>Введите тип практики</h6>
+            <input class="form-control" list="practiceNameList" id="practiceName" placeholder="Type to search...">
+            <datalist id="practiceNameList">
+                <option value="Ознакомительная практика"></option>
+                <option value="Производственная практика"></option>
+                <option value="Преддипломная практика"></option>
+                <option value="Технологическая практика"></option>
+                <option value="Практика по получению первичных профессиональных умений и навыков, в том числе первичных умений и навыков научно-исследовательской деятельности"></option>
+            </datalist>
+        </div>
     </div>
     <div class="second container-fluid text-center" id="container">
         <div class="row">
             <div class="col">
                 <h6>Выберите дату приказа</h6>
                 <input type="date" class="form-control " name="orderDate" id="orderDate">
-
-
             </div>
             <div class="col">
                 <h6>Введите номер приказа</h6>
                 <input class="form-control " name="orderName" id="orderName">
-
-
-
             </div>
         </div>
         <div class="row">
@@ -69,8 +107,8 @@
         <div class="row">
             <div class="col"></div>
             <div class="col">
-                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
-                <input class="form-control " name="supervisorCompanyFN" id="supervisorCompanyFN">
+                                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
+                                <input class="form-control " name="supervisorCompanyFN" id="supervisorCompanyFN">
             </div>
         </div>
     </div>
@@ -82,7 +120,7 @@
         <div class="row">
             <div class="col">
                 <h6>Выберите номер курса</h6>
-                <select class="form-select courseNum" name="courseNum" id="courseNum">
+                <select class="form-select" name="courseNum" id="courseNum">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -96,19 +134,22 @@
                 <input class="form-control "name="groupName" id="groupName">
             </div>
         </div>
-
     </div>
     <div class="fifth container-fluid text-center">
-        <h6>Введите название название направления</h6>
-        <input class="form-control" name="directionName" id="directionName">
-        <h6>Введите название профиля</h6>
-        <input class="form-control" name="profileName" id="profileName">
+        <div>
+            <h6>Введите название направления</h6>
+            <input class="form-control" name="directionName" id="directionName">
+        </div>
+        <div>
+            <h6>Введите название профиля</h6>
+            <input class="form-control" name="profileName" id="profileName">
+        </div>
     </div>
     <div class="container-fluid text-center ">
         <form>
             <div class="form-group">
-                <h6 for="customFile">Выбрать файл</h6>
-                <input type="file" class="form-control" id="formFile" />
+                <h6 for="customFile">Выберете таблицу </h6>
+                <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control" id="formFile" />
             </div>
         </form>
     </div>
@@ -118,25 +159,12 @@
                 Подтвердить
             </button>
             <div class="dropdown-menu">
-<!--                <a class="dropdown-item " id="submitBTNPdf" onclick="createForDepartment(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>-->
-<!--                <a class="dropdown-item " id="submitBTNDoc" onclick="createForDepartment(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>-->
-                <a class="dropdown-item " id="submitBTNPdf" onclick="sendToBack(1)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .pdf</a>
-                <a class="dropdown-item " id="submitBTNDoc" onclick="sendToBack(2)" data-bs-toggle="modal" data-bs-target="#submitWindow">Cохранить как .doc</a>
+                <a class="dropdown-item " id="submitBTNPdf" onclick="sendToBack(1)">Cохранить как .pdf</a>
+                <a class="dropdown-item " id="submitBTNDoc" onclick="sendToBack(2)">Cохранить как .doc</a>
             </div>
         </div>
     </div>
-    <div class="modal fade" id="submitWindow" tabindex="-1" aria-bs-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button class="btn-close" data-bs-dismiss="modal" aria-bs-label="close"></button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="text-center">Ожидайте</h5>
-                </div>
-            </div>
-        </div>
-    </div>
+
     </div>
 </table>
 <script src="../js/submit.js"></script>
