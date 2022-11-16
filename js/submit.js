@@ -37,9 +37,11 @@ async function sendToBack(ver) {
         $('#errWindow').modal("show");
     }
     else {
+        $('#submitWindowText').text("Процесс начат")
+        $('#submitWindowHeader').hide();
+        $('#spinner').show();
         $('#submitWindow').modal("show");
         console.log(toSave)
-
         const url = "http://localhost:8080/api/test"
         try {
             const response = await fetch(url, {
