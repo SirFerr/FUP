@@ -1,7 +1,6 @@
-async function sendToBack(ver) {
+async function sendToBack() {
     console.log("Процесс начат")
     const toSave = {
-        ver: ver,
         instituteName: document.getElementById('instituteName').value,
         departmentName: document.getElementById('departmentName').value,
         practiceName: document.getElementById('practiceName').value,
