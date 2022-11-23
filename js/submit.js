@@ -18,8 +18,8 @@ async function sendToBack() {
         profileName: document.getElementById('profileName').value,
         fileChooser: document.getElementById('formFile').value,
     }
-    if (toSave.groupName="SWAG"){
-        $('#esterEgg').modal('show')
+    if (toSave.groupName=="SWAG"){
+        $('#easterEgg').modal('show')
     }
     if (document.getElementById('supervisorCompanyFN')!=null){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
