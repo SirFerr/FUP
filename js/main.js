@@ -1,7 +1,6 @@
 const {app, BrowserWindow, globalShortcut} = require("electron")
 var kill  = require('tree-kill');
 const os = require('os')
-
 var mainWindow = null
 app.on('ready', function () {
     mainWindow  = new BrowserWindow({
@@ -15,7 +14,7 @@ app.on('ready', function () {
         },
     });
 
-    var jarPath = app.getAppPath() + '\\UniversityProjectBackend.jar';
+    var jarPath = app.getAppPath() + '\\../jar/UniversityProjectBackend.jar';
     var child = require('child_process').spawn(
         'java', ['-jar', jarPath, '']
     );
@@ -31,7 +30,6 @@ app.on('ready', function () {
             mainWindow.webContents.openDevTools()
         })
     }
-
     mainWindow.once('ready-to-show', () => {
         mainWindow.setMenu(null)
         mainWindow.show()
@@ -47,4 +45,3 @@ app.on('ready', function () {
         mainWindow = null
     })
 })
-
