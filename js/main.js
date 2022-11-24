@@ -13,11 +13,9 @@ app.on('ready', function () {
             enableRemoteModules: true
         },
     });
-
-    const jarPath = app.getAppPath() + '\\../jar/UniversityProjectBackend.jar';
-    var child = require('child_process').exec(
-        'java', ['-jar', jarPath, '']
-    )
+    console.log()
+    const jarPath = app.getAppPath()+"/jar/UniversityProject.jar" ;
+    const child = require('child_process').exec('java -jar '+ jarPath)
 
     let platform = os.platform()
     mainWindow.loadFile('html/forDepartment.html')

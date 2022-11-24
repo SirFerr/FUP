@@ -33,8 +33,7 @@ async function sendToBack() {
         !toSave.headOfDFN || !toSave.supervisorCompanyFN ||
         !toSave.practicePlaceAndTime || !toSave.courseNum ||
         !toSave.groupName || !toSave.directionName ||
-        !toSave.profileName || !toSave.fileChooser
-    )) {
+        !toSave.profileName || !toSave.fileChooser    )) {
         $('#errWindow').modal("show");
     }
     else {
@@ -52,20 +51,25 @@ async function sendToBack() {
                     'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify(toSave)
-            });
-            $('#submitWindowText').text("Процесс завершен")
-            $('#submitWindowHeader').show();
-            $('#spinner').hide();
+            })
+            if (response.ok)
+            {
+                $('#submitWindowText').text("Процесс завершен")
+                $('#submitWindowHeader').show();
+                $('#spinner').hide();
+            }
+            else {
+                $('#submitWindowText').text("Ошибка");
+                $('#submitWindowHeader').show();
+                $('#spinner').hide();
+                console.error("error");
+            }
+
         } catch (e) {
             $('#submitWindowText').text("Ошибка");
             $('#submitWindowHeader').show();
             $('#spinner').hide();
-            console.error("error", e);
+            console.error(e);
         }
     }
     }
-
-    async function egg(){
-
-    }
-
