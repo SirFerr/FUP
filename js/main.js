@@ -14,10 +14,10 @@ app.on('ready', function () {
         },
     });
 
-    var jarPath = app.getAppPath() + '\\../jar/UniversityProjectBackend.jar';
-    var child = require('child_process').spawn(
+    const jarPath = app.getAppPath() + '\\../jar/UniversityProjectBackend.jar';
+    var child = require('child_process').exec(
         'java', ['-jar', jarPath, '']
-    );
+    )
 
     let platform = os.platform()
     mainWindow.loadFile('html/forDepartment.html')
