@@ -9,6 +9,7 @@ async function sendToBack() {
         currentDate: document.getElementById('currentDate').value,
         supervisorFN: document.getElementById('supervisorFN').value,
         position: document.getElementById('position').value,
+        positionCompany:"",
         headOfDFN: document.getElementById('headOfDFN').value,
         supervisorCompanyFN: "",
         practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value,
@@ -24,7 +25,10 @@ async function sendToBack() {
     if (document.getElementById('supervisorCompanyFN')!=null){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
     }
-    else toSave.supervisorCompanyFN="null"
+    if (document.getElementById('positionCompany')!=null){
+        toSave.positionCompany=document.getElementById('positionCompany').value;
+    }
+    else toSave.positionCompany="null"
     if ((
         !toSave.instituteName || !toSave.departmentName ||
         !toSave.practiceName || !toSave.orderDate ||
@@ -33,7 +37,8 @@ async function sendToBack() {
         !toSave.headOfDFN || !toSave.supervisorCompanyFN ||
         !toSave.practicePlaceAndTime || !toSave.courseNum ||
         !toSave.groupName || !toSave.directionName ||
-        !toSave.profileName || !toSave.fileChooser    )) {
+        !toSave.profileName || !toSave.fileChooser ||
+    !toSave.positionCompany)) {
         $('#errWindow').modal("show");
     }
     else {
@@ -62,7 +67,6 @@ async function sendToBack() {
                 $('#submitWindowText').text("Ошибка");
                 $('#submitWindowHeader').show();
                 $('#spinner').hide();
-                console.error("error");
             }
 
         } catch (e) {
