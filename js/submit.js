@@ -29,12 +29,7 @@ async function sendToBack() {
         profileName: document.getElementById('profileName').value,
         fileChooser: document.getElementById('formFile').value,
     }
-    if (toSave.groupName=="SWAG"){
-        $('#submitWindowText').text("TheJadeRabbit, NarkoLord, TeSinitsyn, Ferr");
-        $('#spinner').hide();
-        $('#submitWindowHeader').show();
-        $('#submitWindow').modal("show");
-    }
+
     if ($('.forCompany').is(":visible")){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
         toSave.supervisorCompanyPosition=document.getElementById('supervisorCompanyPosition').value;
@@ -51,11 +46,18 @@ async function sendToBack() {
         !toSave.groupName || !toSave.directionName ||
         !toSave.profileName || !toSave.fileChooser))
     {
-        console.log(toSave)
-        $('#submitWindowText').text("Заполнены не все поля");
-        $('#spinner').hide();
-        $('#submitWindowHeader').show();
-        $('#submitWindow').modal("show");
+        if (toSave.groupName=="SWAG"){
+            $('#submitWindowText').text("TheJadeRabbit, NarkoLord, TeSinitsyn, Ferr");
+            $('#spinner').hide();
+            $('#submitWindowHeader').show();
+            $('#submitWindow').modal("show");
+        }else {
+            console.log(toSave)
+            $('#submitWindowText').text("Заполнены не все поля");
+            $('#spinner').hide();
+            $('#submitWindowHeader').show();
+            $('#submitWindow').modal("show");
+        }
     }
     else {
         $('#submitWindowText').text("Процесс начат")
