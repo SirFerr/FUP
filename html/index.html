@@ -2,16 +2,16 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-       <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <div class="navbar bg-secondary text-light">
-        <div class="container">
-            <a class="nav-link" href="../html/forDepartment.html">Для РТУ МИРЭА</a>
-            <a class="nav-link" href="../html/forCompany.html">Для компаний</a>
-        </div>
+<div class="navbar bg-secondary text-light">
+    <div class="container">
+        <a class="btn btn-sm btn-outline-dark"  type="button" onclick="forDepartment()">Для РТУ МИРЭА</a>
+        <a class="btn btn-sm btn-outline-dark" type="button" onclick="forCompany()">Для компаний</a>
     </div>
+</div>
 <table class="app bg-light">
     <div class="modal fade" id="submitWindow" data-bs-keyboard="false" tabindex="-1" aria-bs-hidden="true" data-bs-backdrop="static">
         <div class="modal-dialog modal-dialog-centered">
@@ -24,6 +24,7 @@
                     <div class="text-center" id="spinner">
                         <div class="spinner-border" role="status"></div>
                     </div>
+
                 </div>
             </div>
         </div>
@@ -54,15 +55,15 @@
 
         <div class="row">
             <div>
-            <h6>Введите тип практики</h6>
-            <input class="form-control" list="practiceNameList" id="practiceName" placeholder="Type to search...">
-            <datalist id="practiceNameList">
-                <option value="Ознакомительная практика"></option>
-                <option value="Производственная практика"></option>
-                <option value="Преддипломная практика"></option>
-                <option value="Технологическая практика"></option>
-                <option value="Практика по получению первичных профессиональных умений и навыков, в том числе первичных умений и навыков научно-исследовательской деятельности"></option>
-            </datalist>
+                <h6>Введите тип практики</h6>
+                <input class="form-control" list="practiceNameList" id="practiceName" placeholder="Type to search...">
+                <datalist id="practiceNameList">
+                    <option value="Ознакомительная практика"></option>
+                    <option value="Производственная практика"></option>
+                    <option value="Преддипломная практика"></option>
+                    <option value="Технологическая практика"></option>
+                    <option value="Практика по получению первичных профессиональных умений и навыков, в том числе первичных умений и навыков научно-исследовательской деятельности"></option>
+                </datalist>
             </div>
         </div>
         <hr>
@@ -80,8 +81,8 @@
                 <input type="date" class="form-control" id="currentDate">
             </div>
             <div class="col">
-                    <h6>Введите должность на практике</h6>
-                    <input class="form-control" id="studentPosition">
+                <h6>Введите должность на практике</h6>
+                <input class="form-control" id="studentPosition">
             </div>
         </div>
         <hr>
@@ -118,19 +119,22 @@
                 <input class="form-control "id="headOfDTitle">
             </div>
         </div>
+        <hr class="forCompany" style="display: none;">
+        <div class="row align-items-end forCompany" style="display: none;">
+            <div class="col">
+                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>
+                <input class="form-control formForCompany" id="supervisorCompanyFN">
+            </div>
+            <div class="col">
+                <h6>Введите должность руководителя из компании</h6>
+                <input class="form-control formForCompany" id="supervisorCompanyPosition">
+            </div>
+        </div>
         <hr>
-<!--        <div class="row align-items-end">-->
-<!--            <div class="col"></div>-->
-<!--            <div class="col">-->
-<!--                                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>-->
-<!--                                <input class="form-control " id="supervisorCompanyFN">-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        <hr>-->
         <div class="row">
             <div>
-            <h6>Введите место и время практики</h6>
-            <input class="form-control " id="practicePlaceAndTime">
+                <h6>Введите место и время практики</h6>
+                <input class="form-control " id="practicePlaceAndTime">
             </div>
         </div>
         <div class="row align-items-end">
@@ -152,39 +156,39 @@
         </div>
         <div class="row">
             <div>
-            <h6>Введите название направления</h6>
-            <input class="form-control" id="directionName">
+                <h6>Введите название направления</h6>
+                <input class="form-control" id="directionName">
             </div>
         </div>
         <div class="row">
             <div>
-            <h6>Введите название профиля</h6>
-            <input class="form-control" id="profileName">
-            </div>
-        </div>
-        <hr>
-        <div class="row">
-            <div>
-            <form>
-                <div class="form-group">
-                    <h6 for="customFile">Выберете таблицу </h6>
-                    <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control" id="formFile" />
-                </div>
-            </form>
+                <h6>Введите название профиля</h6>
+                <input class="form-control" id="profileName">
             </div>
         </div>
         <hr>
         <div class="row">
             <div>
-            <button type="button" class="btn btn-primary submitBTN" onclick="sendToBack()">
-                Подтвердить
-            </button>
+                <form>
+                    <div class="form-group">
+                        <h6 for="customFile">Выберете таблицу </h6>
+                        <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control" id="formFile" />
+                    </div>
+                </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div>
+                <button type="button" class="btn btn-primary submitBTN" onclick="sendToBack()">
+                    Подтвердить
+                </button>
             </div>
         </div>
     </div>
 </table>
-    <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/submit.js"></script>
+<script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
+<script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="../js/submit.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@ app.on('ready', function () {
     const child = require('child_process').exec('java -jar '+ jarPath)
 
     let platform = os.platform()
-    mainWindow.loadFile('html/forDepartment.html')
+    mainWindow.loadFile('html/index.html')
     if (platform === 'darwin') {
         globalShortcut.register('Command+Option+I', () => {
             mainWindow.webContents.openDevTools()

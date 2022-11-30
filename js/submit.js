@@ -1,3 +1,9 @@
+async function forDepartment(){
+    $('.forCompany').hide()
+}
+async function forCompany(){
+    $('.forCompany').show()
+}
 async function sendToBack() {
     console.log("Процесс начат")
     const toSave = {
@@ -29,10 +35,8 @@ async function sendToBack() {
         $('#submitWindowHeader').show();
         $('#submitWindow').modal("show");
     }
-    if (document.getElementById('supervisorCompanyFN')!=null){
+    if ($('.forCompany').is(":visible")){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
-    }
-    if (document.getElementById('supervisorCompanyPosition')!=null){
         toSave.supervisorCompanyPosition=document.getElementById('supervisorCompanyPosition').value;
     }
     if ((
@@ -58,34 +62,24 @@ async function sendToBack() {
         $('#submitWindowHeader').hide();
         $('#spinner').show();
         $('#submitWindow').modal("show");
-        console.log(toSave)
         const url = "http://localhost:8080/api/test"
-        try {
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*'
-                },
-                body: JSON.stringify(toSave)
-            })
-            if (response.ok)
-            {
-                $('#submitWindowText').text("Процесс завершен")
-                $('#spinner').hide();
-                $('#submitWindowHeader').show();
-            }
-            else {
-                $('#submitWindowText').text("Ошибка");
-                $('#spinner').hide();
-                $('#submitWindowHeader').show();
-            }
-
-        } catch (e) {
+        const response = await fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify(toSave)
+        })
+        if (response.ok) {
+            $('#submitWindowText').text("Процесс завершен")
+            $('#spinner').hide();
+            $('#submitWindowHeader').show();
+        } else {
+            console.log(toSave)
             $('#submitWindowText').text("Ошибка");
             $('#spinner').hide();
             $('#submitWindowHeader').show();
-            console.error(e);
         }
     }
-    }
+}
