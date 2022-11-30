@@ -8,10 +8,14 @@ async function sendToBack() {
         orderName: document.getElementById('orderName').value,
         currentDate: document.getElementById('currentDate').value,
         supervisorFN: document.getElementById('supervisorFN').value,
-        position: document.getElementById('position').value,
-        positionCompany:"",
+        supervisorDegree: document.getElementById('supervisorDegree').value,
+        supervisorTitle: document.getElementById('supervisorTitle').value,
+        studentPosition: document.getElementById('studentPosition').value,
+        supervisorCompanyPosition:"null",
         headOfDFN: document.getElementById('headOfDFN').value,
-        supervisorCompanyFN: "",
+        headOfDDegree: document.getElementById('headOfDDegree').value,
+        headOfDTitle: document.getElementById('headOfDTitle').value,
+        supervisorCompanyFN: "null",
         practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value,
         courseNum: document.getElementById('courseNum').value,
         groupName: document.getElementById('groupName').value,
@@ -20,26 +24,34 @@ async function sendToBack() {
         fileChooser: document.getElementById('formFile').value,
     }
     if (toSave.groupName=="SWAG"){
-        $('#easterEgg').modal('show')
+        $('#submitWindowText').text("TheJadeRabbit, NarkoLord, TeSinitsyn, Ferr");
+        $('#spinner').hide();
+        $('#submitWindowHeader').show();
+        $('#submitWindow').modal("show");
     }
     if (document.getElementById('supervisorCompanyFN')!=null){
         toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
     }
-    if (document.getElementById('positionCompany')!=null){
-        toSave.positionCompany=document.getElementById('positionCompany').value;
+    if (document.getElementById('supervisorCompanyPosition')!=null){
+        toSave.supervisorCompanyPosition=document.getElementById('supervisorCompanyPosition').value;
     }
-    else toSave.positionCompany="null"
     if ((
         !toSave.instituteName || !toSave.departmentName ||
         !toSave.practiceName || !toSave.orderDate ||
         !toSave.orderName || !toSave.currentDate ||
-        !toSave.supervisorFN || !toSave.position ||
-        !toSave.headOfDFN || !toSave.supervisorCompanyFN ||
+        !toSave.studentPosition ||
+        !toSave.supervisorFN || !toSave.supervisorTitle || !toSave.supervisorDegree ||
+        !toSave.headOfDFN ||   !toSave.headOfDFNTitle ||  !toSave.headOfDFNDegree ||
+        !toSave.supervisorCompanyFN || !toSave.supervisorCompanyPosition ||
         !toSave.practicePlaceAndTime || !toSave.courseNum ||
         !toSave.groupName || !toSave.directionName ||
-        !toSave.profileName || !toSave.fileChooser ||
-    !toSave.positionCompany)) {
-        $('#errWindow').modal("show");
+        !toSave.profileName || !toSave.fileChooser))
+    {
+        console.log(toSave)
+        $('#submitWindowText').text("Заполнены не все поля");
+        $('#spinner').hide();
+        $('#submitWindowHeader').show();
+        $('#submitWindow').modal("show");
     }
     else {
         $('#submitWindowText').text("Процесс начат")
@@ -60,19 +72,19 @@ async function sendToBack() {
             if (response.ok)
             {
                 $('#submitWindowText').text("Процесс завершен")
-                $('#submitWindowHeader').show();
                 $('#spinner').hide();
+                $('#submitWindowHeader').show();
             }
             else {
                 $('#submitWindowText').text("Ошибка");
-                $('#submitWindowHeader').show();
                 $('#spinner').hide();
+                $('#submitWindowHeader').show();
             }
 
         } catch (e) {
             $('#submitWindowText').text("Ошибка");
-            $('#submitWindowHeader').show();
             $('#spinner').hide();
+            $('#submitWindowHeader').show();
             console.error(e);
         }
     }

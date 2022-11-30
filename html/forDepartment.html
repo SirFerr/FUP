@@ -8,7 +8,7 @@
 <body>
     <div class="navbar bg-secondary text-light">
         <div class="container">
-            <a class="nav-link disabled" href="../html/forDepartment.html">Для РТУ МИРЭА</a>
+            <a class="nav-link" href="../html/forDepartment.html">Для РТУ МИРЭА</a>
             <a class="nav-link" href="../html/forCompany.html">Для компаний</a>
         </div>
     </div>
@@ -24,54 +24,36 @@
                     <div class="text-center" id="spinner">
                         <div class="spinner-border" role="status"></div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid text-center" id="container">
+        <div class="row">
+            <div>
+                <h6>Выберите институт</h6>
+                <input class="form-control" list="instituteNameList" id="instituteName" placeholder="Type to search...">
+                <datalist id="instituteNameList">
+                    <option value="Институт информационных технологий"></option>
+                    <option value="Институт искусственного интеллекта"></option>
+                    <option value="Институт кибербезопасности и цифровых технологий"></option>
+                    <option value="Институт перспективных технологий и индустриального программирования"></option>
+                    <option value="Институт технологий управления"></option>
+                    <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
+                    <option>
+                </datalist>
+            </div>
+        </div>
 
-                </div>
+        <div class="row">
+            <div>
+                <h6>Выберите кафедру</h6>
+                <input class="form-control" id="departmentName">
             </div>
         </div>
-    </div>
-    <div class="modal fade" id="errWindow" data-bs-keyboard="false" tabindex="-1" aria-bs-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header" id="errWindowHeader">
-                    <button class="btn-close" data-bs-dismiss="modal" aria-bs-label="close"></button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="text-center" id="errWindowText">Заполнены не все поля</h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" id="easterEgg" data-bs-keyboard="false" tabindex="-1" aria-bs-hidden="true" data-bs-backdrop="static">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button class="btn-close" data-bs-dismiss="modal" aria-bs-label="close"></button>
-                </div>
-                <div class="modal-body">
-                    <h5 class="text-center" id="">TheJadeRabbit, NarkoLord, TeSinitsyn, Ferr </h5>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-center">
-        <div>
-            <h6>Выберите институт</h6>
-            <input class="form-control" list="instituteNameList" id="instituteName" placeholder="Type to search...">
-            <datalist id="instituteNameList">
-                <option value="Институт информационных технологий"></option>
-                <option value="Институт искусственного интеллекта"></option>
-                <option value="Институт кибербезопасности и цифровых технологий"></option>
-                <option value="Институт перспективных технологий и индустриального программирования"></option>
-                <option value="Институт технологий управления"></option>
-                <option value="Институт тонких химических технологий им. М.В. Ломоносова"></option>
-                <option>
-            </datalist>
-        </div>
-        <div>
-            <h6>Выберите кафедру</h6>
-            <input class="form-control" name="departmentName" id="departmentName">
-        </div>
-        <div>
+
+        <div class="row">
+            <div>
             <h6>Введите тип практики</h6>
             <input class="form-control" list="practiceNameList" id="practiceName" placeholder="Type to search...">
             <datalist id="practiceNameList">
@@ -81,100 +63,128 @@
                 <option value="Технологическая практика"></option>
                 <option value="Практика по получению первичных профессиональных умений и навыков, в том числе первичных умений и навыков научно-исследовательской деятельности"></option>
             </datalist>
+            </div>
         </div>
-    </div>
-    <div class="container-fluid text-center" id="container">
-        <div class="row">
+        <hr>
+        <div class="row row-cols-2 align-items-end">
             <div class="col">
                 <h6>Выберите дату приказа</h6>
-                <input type="date" class="form-control " name="orderDate" id="orderDate">
+                <input type="date" class="form-control " id="orderDate">
             </div>
             <div class="col">
                 <h6>Введите номер приказа</h6>
-                <input class="form-control " name="orderName" id="orderName">
+                <input class="form-control " id="orderName">
             </div>
-        </div>
-        <div class="row">
             <div class="col">
                 <h6>Выберите дату получения задания</h6>
-                <input type="date" class="form-control " name="currentDate" id="currentDate">
+                <input type="date" class="form-control" id="currentDate">
             </div>
+            <div class="col">
+                    <h6>Введите должность на практике</h6>
+                    <input class="form-control" id="studentPosition">
+            </div>
+        </div>
+        <hr>
+        <div class="row align-items-end row-cols-2">
             <div class="col">
                 <h6>Введите данные руководителя (Фамилия И.О)</h6>
-                <input class="form-control " name="supervisorFN" id="supervisorFN">
+                <input class="form-control "id="supervisorFN">
+            </div>
+            <div class="col">
+                <h6>Введите должность руководителя</h6>
+                <input class="form-control" id="supervisorPosition">
+            </div>
+            <div class="col">
+                <h6>Введите научную степень руководителя</h6>
+                <input class="form-control "id="supervisorDegree">
+            </div>
+            <div class="col">
+                <h6 class="mx-auto">Введите звание руководителя</h6>
+                <input class="form-control "id="supervisorTitle">
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h6>Введите должность на практике</h6>
-                <input class="form-control position" name="position" id="position">
-            </div>
+        <hr>
+        <div class="row align-items-end row-cols-2">
             <div class="col">
                 <h6>Введите данные зав. Кафедрой (Фамилия И.О)</h6>
-                <input class="form-control " name="headOfDFN" id="headOfDFN">
+                <input class="form-control " id="headOfDFN">
+            </div>
+            <div class="col">
+                <h6>Введите научную степень зав. Кафедрой</h6>
+                <input class="form-control " id="headOfDDegree">
+            </div>
+            <div class="col">
+                <h6>Введите звание зав. Кафедрой</h6>
+                <input class="form-control "id="headOfDTitle">
+            </div>
+        </div>
+        <hr>
+<!--        <div class="row align-items-end">-->
+<!--            <div class="col"></div>-->
+<!--            <div class="col">-->
+<!--                                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>-->
+<!--                                <input class="form-control " id="supervisorCompanyFN">-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <hr>-->
+        <div class="row">
+            <div>
+            <h6>Введите место и время практики</h6>
+            <input class="form-control " id="practicePlaceAndTime">
+            </div>
+        </div>
+        <div class="row align-items-end">
+            <div class="col">
+                <h6>Выберите номер курса</h6>
+                <select class="form-select" name="courseNum" id="courseNum">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            <div class="col">
+                <h6>Введите номер группы</h6>
+                <input class="form-control"  id="groupName">
             </div>
         </div>
         <div class="row">
-            <div class="col"></div>
-            <div class="col">
-                <!--                <h6>Введите данные руководителя из компании (Фамилия И.О)</h6>-->
-                <!--                <input class="form-control " name="supervisorCompanyFN" id="supervisorCompanyFN">-->
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid text-center">
-        <h6>Введите место и время практики</h6>
-        <input class="form-control " name="practicePlaceAndTime" id="practicePlaceAndTime">
-    </div>
-    <div class="container-fluid text-center" id="container">
-<div class="row">
-    <div class="col">
-        <h6>Выберите номер курса</h6>
-        <select class="form-select" name="courseNum" id="courseNum">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5</option>
-            <option value="6">6</option>
-        </select>
-    </div>
-    <div class="col">
-        <h6>Введите номер группы</h6>
-        <input class="form-control "name="groupName" id="groupName">
-    </div>
-</div>
-    </div>
-    <div class="container-fluid text-center">
-        <div>
+            <div>
             <h6>Введите название направления</h6>
-            <input class="form-control" name="directionName" id="directionName">
-        </div>
-        <div>
-            <h6>Введите название профиля</h6>
-            <input class="form-control" name="profileName" id="profileName">
-        </div>
-    </div>
-    <div class="container-fluid text-center ">
-        <form>
-            <div class="form-group">
-                <h6 for="customFile">Выберете таблицу </h6>
-                <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control" id="formFile" />
+            <input class="form-control" id="directionName">
             </div>
-        </form>
-    </div>
-    <div class="container-fluid text-center">
+        </div>
+        <div class="row">
+            <div>
+            <h6>Введите название профиля</h6>
+            <input class="form-control" id="profileName">
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div>
+            <form>
+                <div class="form-group">
+                    <h6 for="customFile">Выберете таблицу </h6>
+                    <input type="file" accept=".csv, application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel" class="form-control" id="formFile" />
+                </div>
+            </form>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div>
             <button type="button" class="btn btn-primary submitBTN" onclick="sendToBack()">
                 Подтвердить
             </button>
+            </div>
         </div>
-    </div>
-
     </div>
 </table>
     <script type="text/javascript" src="../node_modules/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/submit.js"></script>
-    <script src="../js/main.js"></script>
 </body>
 </html>
