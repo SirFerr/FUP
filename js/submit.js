@@ -41,7 +41,7 @@ async function sendToBack() {
         !toSave.orderName || !toSave.currentDate ||
         !toSave.studentPosition ||
         !toSave.supervisorFN || !toSave.supervisorTitle || !toSave.supervisorDegree ||
-        !toSave.headOfDFN ||   !toSave.headOfDFNTitle ||  !toSave.headOfDFNDegree ||
+        !toSave.headOfDFN ||   !toSave.headOfDTitle ||  !toSave.headOfDDegree ||
         !toSave.supervisorCompanyFN || !toSave.supervisorCompanyPosition ||
         !toSave.practicePlaceAndTime || !toSave.courseNum ||
         !toSave.groupName || !toSave.directionName ||
