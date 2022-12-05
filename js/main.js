@@ -14,7 +14,7 @@ app.on('ready', function () {
         },
     });
     console.log()
-    const jarPath = app.getAppPath()+"/jar/UniversityProject.jar" ;
+    const jarPath = app.getAppPath()+"/jar/UniversityProjectBakend-1.0.jar" ;
     const child = require('child_process').exec('java -jar '+ jarPath)
 
     let platform = os.platform()
