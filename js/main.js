@@ -37,7 +37,6 @@ app.on('ready', function () {
         // Prevent Command-R from unloading the window contents.
         e.returnValue = false
     }
-
     mainWindow.on('closed', function () {
         kill(child.pid);
         mainWindow = null

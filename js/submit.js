@@ -47,7 +47,7 @@ async function sendToBack() {
         !toSave.profileName || !toSave.fileChooser))
     {
         if (toSave.groupName==="SWAG"){
-            $('#submitWindowText').text("TheJadeRabbit, NarkoLord, TeSinitsyn, Ferr");
+            $('#submitWindowText').text("TheJadeRabbit, NarkoLord, tesinitsyn, Ferr");
             $('#spinner').hide();
             $('#submitWindowHeader').show();
             $('#submitWindow').modal("show");
