@@ -11,8 +11,8 @@
         <div class="btn-group w-100">
             <input type="radio" name="options" class="btn-check" id="option1" onclick="forDepartment()" autocomplete="off" checked >
             <label class="btn btn-secondary" for="option1">Для РТУ МИРЭА</label>
-            <input type="radio" name="options" class="btn-check" id="option2" onclick="forCompany()" autocomplete="off">
-            <label class="btn btn-secondary" for="option2">Для компаний</label>
+            <input type="radio" name="options" class="btn-check" id="option2" onclick="forCompany()" autocomplete="off" disabled>
+            <label class="btn btn-secondary" for="option2">Для компаний (still beta)</label>
         </div>
     </div>
 </div>
@@ -85,7 +85,7 @@
             </div>
             <div class="col">
                 <h6>Введите должность на практике</h6>
-                <input class="form-control" id="studentPosition">
+                <input class="form-control" id="position">
             </div>
         </div>
         <hr class="table-group-divider">

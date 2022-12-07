@@ -17,7 +17,7 @@ async function sendToBack() {
         supervisorDegree: document.getElementById('supervisorDegree').value,
         supervisorTitle: document.getElementById('supervisorTitle').value,
         supervisorPosition: document.getElementById('supervisorPosition').value,
-        studentPosition: document.getElementById('studentPosition').value,
+        position: document.getElementById('position').value,
         supervisorCompanyPosition:"null",
         headOfDFN: document.getElementById('headOfDFN').value,
         headOfDDegree: document.getElementById('headOfDDegree').value,
@@ -40,7 +40,7 @@ async function sendToBack() {
         !toSave.practiceName || !toSave.orderDate ||
         !toSave.orderName || !toSave.currentDate ||
 
-        !toSave.studentPosition ||
+        !toSave.position ||
         !toSave.supervisorFN || !toSave.supervisorTitle || !toSave.supervisorDegree || !toSave.supervisorPosition ||
         !toSave.headOfDFN ||   !toSave.headOfDTitle ||  !toSave.headOfDDegree ||
         !toSave.supervisorCompanyFN || !toSave.supervisorCompanyPosition ||
