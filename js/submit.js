@@ -5,7 +5,6 @@ async function forCompany(){
     $('.forCompany').show()
 }
 async function sendToBack() {
-    console.log("Процесс начат")
     const toSave = {
         instituteName: document.getElementById('instituteName').value,
         departmentName: document.getElementById('departmentName').value,
@@ -15,39 +14,35 @@ async function sendToBack() {
         currentDate: document.getElementById('currentDate').value,
         supervisorFN: document.getElementById('supervisorFN').value,
         supervisorDegree: document.getElementById('supervisorDegree').value,
-        supervisorTitle: document.getElementById('supervisorTitle').value,
+        supervisorTitle: document.getElementById('supervisorTitle').value  ? document.getElementById('supervisorTitle').value:"null" ,
         supervisorPosition: document.getElementById('supervisorPosition').value,
         position: document.getElementById('position').value,
-        supervisorCompanyPosition:"null",
+        supervisorCompanyPosition:$('.forCompany').is(":visible")? document.getElementById('supervisorCompanyPosition').value : "null",
         headOfDFN: document.getElementById('headOfDFN').value,
         headOfDDegree: document.getElementById('headOfDDegree').value,
         headOfDTitle: document.getElementById('headOfDTitle').value,
-        supervisorCompanyFN: "null",
-        practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value,
+        supervisorCompanyFN: $('.forCompany').is(":visible")? document.getElementById('supervisorCompanyFN').value : "null",
+        practicePlaceAndTime: document.getElementById('practicePlaceAndTime').value ,
         courseNum: document.getElementById('courseNum').value,
         groupName: document.getElementById('groupName').value,
         directionName: document.getElementById('directionName').value,
         profileName: document.getElementById('profileName').value,
         fileChooser: document.getElementById('formFile').value,
     }
+    console.log(toSave)
+    if (!(
+        toSave.instituteName && toSave.departmentName &&
+        toSave.practiceName && toSave.orderDate &&
+        toSave.orderName && toSave.currentDate &&
 
-    if ($('.forCompany').is(":visible")){
-        toSave.supervisorCompanyFN=document.getElementById('supervisorCompanyFN').value;
-        toSave.supervisorCompanyPosition=document.getElementById('supervisorCompanyPosition').value;
-    }
-    if ((
-        !toSave.instituteName || !toSave.departmentName ||
-        !toSave.practiceName || !toSave.orderDate ||
-        !toSave.orderName || !toSave.currentDate ||
+        toSave.position &&
+        toSave.supervisorFN && toSave.supervisorDegree && toSave.supervisorPosition &&
+        toSave.headOfDFN && toSave.headOfDTitle &&  toSave.headOfDDegree &&
+        toSave.supervisorCompanyFN && toSave.supervisorCompanyPosition &&
 
-        !toSave.position ||
-        !toSave.supervisorFN || !toSave.supervisorTitle || !toSave.supervisorDegree || !toSave.supervisorPosition ||
-        !toSave.headOfDFN ||   !toSave.headOfDTitle ||  !toSave.headOfDDegree ||
-        !toSave.supervisorCompanyFN || !toSave.supervisorCompanyPosition ||
-
-        !toSave.practicePlaceAndTime || !toSave.courseNum ||
-        !toSave.groupName || !toSave.directionName ||
-        !toSave.profileName || !toSave.fileChooser))
+        toSave.practicePlaceAndTime && toSave.courseNum &&
+        toSave.groupName && toSave.directionName &&
+        toSave.profileName && toSave.fileChooser))
     {
         if (toSave.groupName==="SWAG"){
             $('#submitWindowText').text("TheJadeRabbit, NarkoLord, tesinitsyn, Ferr");
