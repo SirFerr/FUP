@@ -2,7 +2,7 @@ async function forDepartment(){
     $('.forCompany').hide()
 }
 async function forCompany(){
-    $('.forCompany').show()
+    // $('.forCompany').show()
 }
 async function sendToBack() {
     const toSave = {
